@@ -30,9 +30,10 @@ class Book:
 
 class User:
 
-    def __init__(self, name, age):
+    def __init__(self, name, age, id):
         self.name = name
         self.age = age
+        self.id = id
 
     def getName(self):
         return self.name
@@ -42,3 +43,21 @@ class User:
     
 
 class Library:
+    bookList = []
+    userList = []
+
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+
+    def addBook(self, book):
+        self.bookList.append(book)
+
+    def addUser(self, user):
+        self.bookList.append(user)
+
+    def getBooks(self):
+        return self.bookList
+    
+    def getUsers(self):
+        return self.userList
