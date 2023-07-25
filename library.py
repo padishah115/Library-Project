@@ -41,6 +41,8 @@ class User:
     def getAge(self):
         return self.age
     
+    def getId(self):
+        return self.id
 
 class Library:
     bookList = []
@@ -54,10 +56,17 @@ class Library:
         self.bookList.append(book)
 
     def addUser(self, user):
-        self.bookList.append(user)
+        self.userList.append(user)
 
     def getBooks(self):
         return self.bookList
     
     def getUsers(self):
         return self.userList
+    
+    def find_user(self, id):
+        for x in self.userList:
+            if id == x.id:
+                return x
+            else:
+                return None
